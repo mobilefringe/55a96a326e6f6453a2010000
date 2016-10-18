@@ -134,7 +134,6 @@
             $(container).html(item_rendered.join(''));
         };
         
-        
         function get_month (id){
             switch(id) {
                 case 0:
@@ -173,15 +172,9 @@
                 case 11:
                     month = "Dec"
                     break;
-                    
             }
             return month;
         }
-  
         loadMallData(renderAll);  
-
-    
-  
     });
-    
 </script>
