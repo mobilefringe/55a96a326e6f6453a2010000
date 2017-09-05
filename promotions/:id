@@ -118,16 +118,6 @@
                             val.alt_promo_image_url = "//codecloud.cdn.speedyrails.net/sites/55a96a326e6f6453a2010000/76e41eb9cfb54adf1f88b2168014aefa/DO_default.jpg"
                         }
                     }
-    
-                // if ((val.promo_image_url).indexOf('missing.png') > -1){
-                //     if (val.promotionable_type == "Store") {
-                //         var store_details = getStoreDetailsByID(val.promotionable_id);
-                //         val.alt_promo_image_url = getImageURL(store_details.store_front_url);
-                //         val.store_detail_btn = store_details.slug 
-                //         val.store_name = store_details.name
-                //     } else {
-                //         val.alt_promo_image_url = "//codecloud.cdn.speedyrails.net/sites/55a96a326e6f6453a2010000/76e41eb9cfb54adf1f88b2168014aefa/DO_default.jpg"
-                //     }
                 } else {
                     if (val.promotionable_type == "Store") {
                         var store_details = getStoreDetailsByID(val.promotionable_id);
