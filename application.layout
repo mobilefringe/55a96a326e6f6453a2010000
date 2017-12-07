@@ -413,8 +413,10 @@
 <script type="text/javascript" src="//preview-template.codecloudapp.com/restart_theme.js"></script>
 <script type="text/javascript" src="//kodekloud.s3.amazonaws.com/sites/54b83f086e6f646b45000000/360754705c291ba7cd4a4a18102adbaf/collapser.js"></script>
 <script>
+    var current_year = moment().year();
+    $("#current_year").text(current_year);
+    
     function show_results(id){
-        
         if ( $("#"+id+"_results").is(":visible")){
             $("#"+id+"_results").slideUp();
             $("#"+id+"_arrow").removeClass("fa-chevron-down", 1000);
