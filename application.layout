@@ -220,7 +220,7 @@
                     <a class="navbar-brand" href="/home" id="site_logo">
                         <script id="logo_template" type="x-tmpl-mustache/text">
                             {% raw %}
-                            <img src="{{site_logo}}">
+                            <img src="{{site_logo}}" alt="Downtown Oakville">
                             {% endraw %}
                         </script>
                     </a>
