@@ -1,0 +1,129 @@
+<div id="loading_screen">
+    <img alt="loading" src="//kodekloud.s3.amazonaws.com/sites/5447ebb66e6f641987020000/3604f5c26997bea3de504de139debcec/loading.gif"/>
+</div>
+<div  id="main_content" style="display:none">
+    <nav>
+        <ul class="breadcrumb">
+            <li><a href="/home">Home</a></li>
+            <li class="active">Sustainability & Wellness Program</li>
+        </ul>
+    </nav>
+    <div class="page_banner">
+        <h2>Sustainability & Wellness Program</h2>
+    </div>
+    <div class="inside_page_content">
+        <div class="left_column">
+            <img class="inside_banner_image" alt="" src="//kodekloud.s3.amazonaws.com/sites/54e4c5846e6f640b1b000000/0c6440cf3178978c6ae2b530b853f567/promo.jpg"/>
+            <div class="promo_list_div" id="promo_list_container">
+                <script id="promo_list_template" type="x-tmpl-mustache/text">
+                    <div class="promo_inside_content">
+                        <div class="promo_image_div">
+                            <a href="{{alt_promo_image_url}}" rel="lightbox-gallery" title="{{name}}">
+                                <img alt="promo image" class="promo_image" src="{{alt_promo_image_url}}" />
+                            </a> 
+                        </div>
+                        <div class="promo_desc_box">
+                            <p class="promo_header right_column_header">{{name}}</p>
+                            <p class="directory_content promo_date">{{dates}}</p>
+                            <p id="desc">{{description}}</p>
+                            <a href="../sustainability_and_wellness_program/{{slug}}" class="btn btn-primary pull-left" aria-label="Event Details: {{name}}">Event Details</a> 
+                        </div>
+                    </div>
+                </script>
+            </div>  
+            <section class="service_teasers" style="display:none" id="no_event_container">
+                <p>There are no events at this time, please check back later.</p>
+            </section>
+        </div>
+        <div class="right_column">
+            <p class="right_column_header">centre information</p>
+            <div id="centre_info_container">
+                <script id="centre_info_template" type="x-tmpl-mustache/text">
+                    <p class="directory_content">{{name}}</p>
+                    <p class="directory_content">{{address1}}</p>
+                    <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        function renderAll (){
+            var propertyDetails = getPropertyDetails();
+            renderPageData('#centre_info_container','#centre_info_template',propertyDetails, 'property_details')
+            all_promos = getPromotionsList(); 
+            all_promos = all_promos.reverse();
+            promo_array = []
+            $.each( all_promos , function( key, val ){
+                today = moment();
+                webDate = moment(val.show_on_web_date);
+                if (today >= webDate) {
+                    promo_array.push(val)
+                } 
+            });
+            all_promos = promo_array.filter(function(o) {return o.is_special_promo;});
+            if (all_promos.length > 0 ) {
+                renderPageData("#promo_list_container","#promo_list_template", all_promos, "promos");    
+            } else {
+                $("#no_event_container").show();
+            } 
+            
+            $("#loading_screen").hide();
+            $("#main_content").show();
+            $.getScript("http://bkindoortemplate.codecloudapp.com/slimbox_mod.js");
+            $('head').append('<link rel="stylesheet" href="//cdn.jsdelivr.net/slimbox/2.0.5/css/slimbox2.css" type="text/css" media="screen" />');
+        }
+        
+        function renderPageData(container, template, collection, type){
+            var item_list = [];
+            var item_rendered = [];
+            var template_html = $(template).html();
+            Mustache.parse(template_html);   // optional, speeds up future uses
+            if (type == "property_details"){
+                item_list.push(collection);
+                collection = []
+                collection = item_list;
+            }
+            $.each( collection , function( key, val ) {
+                if (type == "promos"){
+                    if ((val.promo_image_url_abs).indexOf('missing.png') > -1){
+                        if (val.promotionable_type == "Store") {
+                            var store_details = getStoreDetailsByID(val.promotionable_id);
+                            if ((store_details.store_front_url_abs).indexOf('missing.png') > -1) {
+                                val.alt_promo_image_url = "//kodekloud.s3.amazonaws.com/sites/5564c1ec6e6f640f57660000/4e48a59cc7477b521dd627f2305104a1/default.jpg"
+                            } else {
+                                val.alt_promo_image_url = (store_details.store_front_url_abs);    
+                            }
+                            val.store_name = store_details.name
+                        } else {
+                            val.alt_promo_image_url = "//kodekloud.s3.amazonaws.com/sites/5564c1ec6e6f640f57660000/4e48a59cc7477b521dd627f2305104a1/default.jpg"
+                        }
+                    } else {
+                        val.alt_promo_image_url = (val.promo_image_url_abs);
+                        if (val.promotionable_type == "Store") {
+                            var store_details = getStoreDetailsByID(val.promotionable_id);
+                            val.store_detail_btn = store_details.slug 
+                            val.store_name = store_details.name
+                        }
+                    }
+                    if (val.description.length > 110) {
+                        val.description =  val.description.substring(0,100)+'...';
+                    } 
+                    
+                    var start = moment(val.start_date).tz(getPropertyTimeZone());
+                    var end = moment(val.end_date).tz(getPropertyTimeZone());
+                    
+                    val.dates = start.format("MMM D");
+                }
+                
+                var rendered = Mustache.render(template_html,val);
+                item_rendered.push(rendered);
+            });
+            $(container).show();
+            $(container).html(item_rendered.join(''));
+        }
+        
+        loadMallDataCached(renderAll);  
+    });
+</script>
