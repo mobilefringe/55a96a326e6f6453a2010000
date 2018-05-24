@@ -39,22 +39,20 @@
                 </script>
             </div>  
             <section class="service_teasers" style="display:none" id="no_event_container">
-                <h2>There are no jobs posted at this time, please check back later.</h2>
+                <p>There are no jobs posted at this time, please check back later.</p>
             </section>
         </div>
         <div class="right_column">
-            <p class="right_column_header">centre information</p>
+            <p class="right_column_header">Centre Information</p>
             <div id="centre_info_container">
                 <script id="centre_info_template" type="x-tmpl-mustache/text">
                     <p class="directory_content">{{name}}</p>
-                     <p class="directory_content">18 Signature Properties</p>
+                    <p class="directory_content">18 Signature Properties</p>
                     <p class="directory_content">c/o Bentall Kennedy</p>
                     <p class="directory_content">{{address1}}</p>
                     <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
                 </script>
             </div>
-            
-            
         </div>
     </div>
 </div>
