@@ -1,9 +1,9 @@
 <style scoped>
-    h3 {
-        margin-top:0 !important;
-        text-transform:uppercase;
-        font-weight:400 !important;
-    }
+    /*h3 {*/
+    /*    margin-top:0 !important;*/
+    /*    text-transform:uppercase;*/
+    /*    font-weight:400 !important;*/
+    /*}*/
     .feature_title{
         text-align:left;
     }
