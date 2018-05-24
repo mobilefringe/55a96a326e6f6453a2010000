@@ -197,6 +197,9 @@
         .navbar .nav li a:hover {
             color:#999999 !important;
         }
+        .copyright {
+            background-color: rgb(0, 0, 0);
+        }
         .site-map-section a:hover {}
         @media (max-width: 767px){
             .main_window {
