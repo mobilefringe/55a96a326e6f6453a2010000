@@ -27,10 +27,10 @@
     <script id="description_template" type="x-tmpl-mustache/text">
         </br>
         {{#welcome_message}}
-        <h3 class="site_welcome_msg">{{welcome_message}}</h3>
+        <h2 class="site_welcome_msg">{{welcome_message}}</h2>
         {{/welcome_message}}
         {{#description}}
-        <h4 class="site_description">{{description}}</h4>
+        <h3 class="site_description">{{description}}</h3>
         {{/description}}
     </script>
 </section>
