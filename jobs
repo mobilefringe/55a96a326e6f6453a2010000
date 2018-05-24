@@ -96,6 +96,8 @@
                     var store_details = getStoreDetailsByID(val.jobable_id);
                     val.store_name = store_details.name
                     val.store_detail_btn = store_details.slug 
+                } else {
+                    val.store_name = "Downtown Oakville"
                 }
                 var rendered = Mustache.render(template_html,val);
                 item_rendered.push(rendered);
