@@ -1,4 +1,7 @@
-<style scoped>
+<style>
+    h2 {
+        text-transform: uppercase;
+    }
     /*h3 {*/
     /*    margin-top:0 !important;*/
     /*    text-transform:uppercase;*/
