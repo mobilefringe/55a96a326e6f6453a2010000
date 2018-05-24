@@ -58,11 +58,7 @@
     </div>
 </div>
 <script>
-    
     $(document).ready(function() {
-   
-       
-                
         function renderPageData (){
             var repoList = getRepoList();
             var featureList = getFeatureList();
@@ -96,32 +92,27 @@
             $.each( banners , function( key, val ) {
                 today = new Date;
                 start = new Date (val.start_date);
-               
                 start.setDate(start.getDate());
-               if(val.url == "" || val.url === null){
-                   val.css = "style=cursor:default;";
-                   val.noLink = "return false";
-               }
-               if (start <= today){
-                 if (val.end_date){
-                     end = new Date (val.end_date);
-                     end.setDate(end.getDate() + 1);
-                     if (end >= today){
-                       item_list.push(val);  
-                     }
-                     
-                 } else {
-                     item_list.push(val);
-                 }
-               
-                
-               }
+                if(val.url == "" || val.url === null){
+                    val.css = "style=cursor:default;";
+                    val.noLink = "return false";
+                }
+                if (start <= today){
+                    if (val.end_date){
+                        end = new Date (val.end_date);
+                        end.setDate(end.getDate() + 1);
+                        if (end >= today){
+                            item_list.push(val);  
+                        }
+                    } else {
+                        item_list.push(val);
+                    }
+                }
             });
 
             $.each( item_list , function( key, val ) {
                 var repo_rendered = Mustache.render(banner_template_html,val);
                 item_rendered.push(repo_rendered);
-               
             });
             
             $(home_banner).show();
@@ -130,10 +121,14 @@
             $('.flexslider').flexslider({
                 animation: "slide",
                 controlNav: true,
-                directionNav: true,        
+                directionNav: true,  
+                pauseOnHover: true,
                 prevText: "",
                 nextText: ""
             });
+            $(".flex-prev").html("<p style='display: none'>Previous Slide</p>");
+    		$(".flex-next").html("<p style='display: none'>Next Slide</p>");    
+
         }
         function renderFeatureItems(feature_template,feature_items,featureList){
             var item_list = [];
