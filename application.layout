@@ -197,6 +197,9 @@
         .navbar .nav li a:hover {
             color:#999999 !important;
         }
+        #footer_teasers_wrapper .footer_teaser a {
+            color: #ccc;
+        }
         .copyright {
             background-color: rgb(0, 0, 0);
         }
