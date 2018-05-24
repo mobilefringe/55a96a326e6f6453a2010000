@@ -26,7 +26,7 @@
                             <p class="promo_header right_column_header">{{name}}</p>
                             <p class="directory_content promo_date">{{dates}}</p>
                             <p id="desc">{{description}}</p>
-                            <a href="../sustainability_and_wellness_program/{{slug}}" class="btn btn-primary pull-left" aria-label="Event Details: {{name}}">Event Details</a> 
+                            <a href="/sustainability_and_wellness_program/{{slug}}" class="btn btn-primary pull-left" aria-label="Event Details: {{name}}">Event Details</a> 
                         </div>
                     </div>
                 </script>
