@@ -91,7 +91,7 @@
             });      
         });
         
-        setEndPoint('//downtownoakville.mallmaverick.com/api/v4/downtownoakville/all.json');
+        setEndPoint('//twinpine.mallmaverick.com/api/v4/twinpine/all.json');
     </script>
     <style>
         /*custom styles*/
