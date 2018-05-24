@@ -44,8 +44,6 @@
                     <p class="directory_content">{{city}}, {{province_state}} {{postal_code}}</p>
                 </script>
             </div>
-            
-            
         </div>
     </div>
 </div>
@@ -58,9 +56,6 @@
             all_events = all_events.reverse();
             events_array = []
             $.each( all_events , function( key, val ){
-                // today = new Date();
-                // webDate = new Date(val.show_on_web_date);
-                
                 today = moment();
                 webDate = moment(val.show_on_web_date);
                 if (today >= webDate) {
@@ -75,7 +70,7 @@
             }
             $("#loading_screen").hide();
             $("#main_content").show();
-            $.getScript("//cdn.jsdelivr.net/slimbox/2.0.5/js/slimbox2.js");
+            $.getScript("//bkindoortemplate.codecloudapp.com/slimbox_mod.js");
             $('head').append('<link rel="stylesheet" href="//cdn.jsdelivr.net/slimbox/2.0.5/css/slimbox2.css" type="text/css" media="screen" />');
         }
     
@@ -103,12 +98,6 @@
                     } else {
                         val.alt_promo_image_url = getImageURL(val.event_image_url);
                     }
-                    // start = new Date (val.start_date);
-                    // end = new Date (val.end_date);
-                    // start.setDate(start.getDate()+1);
-                    // end.setDate(end.getDate()+1);
-                    // val.dates = (get_month(start.getMonth()))+" "+(start.getDate())+" - "+get_month(end.getMonth())+" "+end.getDate();
-                    
                     var start = moment(val.start_date).tz(getPropertyTimeZone());
                     var end = moment(val.end_date).tz(getPropertyTimeZone());
                     if (start.format("DMY") == end.format("DMY")){
