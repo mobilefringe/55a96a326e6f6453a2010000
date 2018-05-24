@@ -29,8 +29,9 @@
                                 <br>{{dates}}
                             </p>
                             <p id="desc">{{description}}</p>
-                            <a href="/promotions/{{slug}}" class="btn btn-primary pull-left" aria-label="Promo Details: {{name}}"
->View Promotion Details</a>
+                            <a href="/promotions/{{slug}}" class="btn btn-primary pull-left" aria-label="Promo Details: {{name}}">
+                                View Promotion Details
+                            </a>
                         </div>
                     </div>
                 </script>
