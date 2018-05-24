@@ -197,7 +197,7 @@
         .navbar .nav li a:hover {
             color:#999999 !important;
         }
-        #footer_teasers_wrapper .footer_teaser a {
+        #footer_teasers_wrapper .footer_teaser a, #footer_teasers_wrapper .footer_teaser a:hover {
             color: #ccc;
         }
         .copyright {
