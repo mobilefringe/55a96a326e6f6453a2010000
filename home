@@ -9,6 +9,7 @@
     /*}*/
     .feature_title{
         text-align:left;
+        font-size:17px;
     }
 </style>
 <section id="slider_wrapper" class="slider_wrapper">
