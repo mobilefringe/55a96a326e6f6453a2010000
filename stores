@@ -78,6 +78,7 @@
     $(document).ready(function() {
         function renderAll (){
             var stores = getStoresList();
+            stores = _.filter(stores, function(o) { return o.name != "Bentall Kennedy Store" });
             var category_stores = getStoresListByCategory();
             var categories = getStoreCategories();
             var propertyDetails = getPropertyDetails();
