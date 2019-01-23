@@ -115,7 +115,7 @@
                     var start = moment(val.start_date).tz(getPropertyTimeZone());
                     var end = moment(val.end_date).tz(getPropertyTimeZone());
                     
-                    val.dates = start.format("MMM D");
+                    val.dates = start.format("MMM D, YYYY");
                 }
                 
                 var rendered = Mustache.render(template_html,val);
