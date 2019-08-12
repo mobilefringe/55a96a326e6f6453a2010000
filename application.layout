@@ -325,7 +325,7 @@
                                 <h3 class="footer_text" style="font-size:17px;width:300px;">{{name}}</h3>
                                 <p class="footer_text" style="width:300px;font-size:17px">
                                     18 Signature Properties</br>
-                                    c/o Bentall Kennedy</br>
+                                    c/o BentallGreenOak</br>
                                     {{city}}, {{province_state}}
                                 </p>
                                 <p><i class="fa fa-phone"></i>{{contact_phone}}</p>
@@ -406,7 +406,7 @@
                         </div>
                     </div>
                      <a href="//bentallgreenoak.com" target="_blank">
-                    <div class="bk_logo_svg"><p style="display:none">Bentall Kennedy</p></div>
+                    <div class="bk_logo_svg"><p style="display:none">BentallGreenOak</p></div>
                 </a>
                 </div>
             </div>
@@ -426,7 +426,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-md-6 footer-text"> 
-                        ©<span id="current_year"></span> Bentall Kennedy All rights reserved. <a href="/privacy_policy">Privacy Policy</a>  
+                        ©<span id="current_year"></span> BentallGreenOak All rights reserved. <a href="/privacy_policy">Privacy Policy</a>  
                     </div>
                     <div class="text-right col-sm-6 col-md-6 footer-text"> 
                         Powered by <a href="//mallmaverick.com/" target="_blank">Mall Maverick</a> 
