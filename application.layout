@@ -256,7 +256,7 @@
                 <nav class="mobile_menu" style="display:none">
                     <ul>
                         <li><a href="/stores">Store Directory</a></li>
-                        <li><a href="/promotions">Promotions</a></li>
+                        <!--<li><a href="/promotions">Promotions</a></li>-->
                         <li><a href="#" onclick="javascript:toggle_submenu('leasing_dd');">Leasing <span class="caret"></span></a>
                             <div id="leasing_dd" class="submenu" style="display:none">
                                 <ul>
@@ -280,7 +280,7 @@
                 <nav class="collapse navbar-collapse">              
                     <ul class="nav pull-right navbar-nav">
                         <li><a href="/stores">Store Directory</a></li>
-                        <li id="promotion_link"><a href="/promotions">Promotions</a></li>
+                        <!--<li id="promotion_link"><a href="/promotions">Promotions</a></li>-->
                         <li id="leasing_link" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
                                 Leasing <span class="caret"></span>
@@ -415,7 +415,7 @@
             <div class="bottom-site-map">
                 <ul style="margin-bottom:0;padding:0">
                     <li><a href="/stores">Store Directory</a></li>
-                    <li><a href="/promotions">Promotions</a></li>
+                    <!--<li><a href="/promotions">Promotions</a></li>-->
                     <li><a href="/leasing">Leasing</a></li>
                     <li><a href="/find_us">Find Us</a></li>
                     <li><a href="/contact_us">contact Us</a></li>
