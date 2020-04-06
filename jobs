@@ -23,7 +23,9 @@
     </div>
     <div class="inside_page_content">
         <div class="left_column">
-            <img class="inside_banner_image" alt="" src="//kodekloud.s3.amazonaws.com/sites/54edfd7a6e6f640717000000/2804b99a4a7c2ed210ec0bfcd23dfaee/Banner-Image-008_edited.jpg"/>
+            <!--<img class="inside_banner_image" alt="" src="//kodekloud.s3.amazonaws.com/sites/54edfd7a6e6f640717000000/2804b99a4a7c2ed210ec0bfcd23dfaee/Banner-Image-008_edited.jpg"/>-->
+            
+            <img class="inside_banner_image" alt="" src=""/>
             <div class="promo_list_div" id="promo_list_container">
                 <script id="promo_list_template" type="x-tmpl-mustache/text">
                     <div class="promo_inside_content">
@@ -79,6 +81,11 @@
             } 
             $("#loading_screen").hide();
             $("#main_content").show();
+            
+            // dynamic banner 
+            var bannerInfo = getRepoDetailsByName('Leasing Jobs Banner')
+            var bannerImageUrl = bannerInfo.images[0].image_url
+            $(".inside_banner_image").attr("src", bannerImageUrl);
         }
         
         function renderPageData(container, template, collection, type){
