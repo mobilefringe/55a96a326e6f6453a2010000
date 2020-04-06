@@ -144,7 +144,7 @@
             $("#main_content").show();
             
             // dynamic banner 
-            var bannerInfo = getRepoDetailsByName('Contact Us Banner')
+            var bannerInfo = getRepoDetailsByName('Stores / Contact Us Banner')
             var bannerImageUrl = bannerInfo.images[0].image_url
             $(".inside_banner_image").attr("src", bannerImageUrl);
         }
