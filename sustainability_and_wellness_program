@@ -76,9 +76,8 @@
             // dynamic banner 
             var bannerInfo = getRepoDetailsByName('Sustainability and Wellness Banner')
             var bannerImageUrl = bannerInfo.images[0].image_url
-            // if (bannerImageUrl) {
-                $(".inside_banner_image").attr("src", bannerImageUrl);   
-            // }
+            $(".inside_banner_image").attr("src", bannerImageUrl);   
+
             
             $.getScript("//bkindoortemplate.codecloudapp.com/slimbox_mod.js");
             $('head').append('<link rel="stylesheet" href="//cdn.jsdelivr.net/slimbox/2.0.5/css/slimbox2.css" type="text/css" media="screen" />');
